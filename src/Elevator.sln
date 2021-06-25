@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Elevator", "Elevator.csproj", "{7B9FF686-FB97-4DC6-85A3-066A24DBD5E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{09BB36B3-764C-48A9-A7DA-B1A2F736357C}"
+ProjectSection(SolutionItems) = preProject
+	..\AUTHORS.md = ..\AUTHORS.md
+	..\BUGS.md = ..\BUGS.md
+	..\CHANGELOG.md = ..\CHANGELOG.md
+	..\CONTRIBUTING.md = ..\CONTRIBUTING.md
+	..\COPYING.md = ..\COPYING.md
+	..\INSTALL.md = ..\INSTALL.md
+	..\NEWS.md = ..\NEWS.md
+	..\README.md = ..\README.md
+	..\THANKS.md = ..\THANKS.md
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B9FF686-FB97-4DC6-85A3-066A24DBD5E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9FF686-FB97-4DC6-85A3-066A24DBD5E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9FF686-FB97-4DC6-85A3-066A24DBD5E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9FF686-FB97-4DC6-85A3-066A24DBD5E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
