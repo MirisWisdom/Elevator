@@ -17,6 +17,7 @@
  * along with Elevator.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Diagnostics;
 using Mono.Options;
 using static System.Console;
 using static System.Diagnostics.Process;
@@ -38,9 +39,13 @@ namespace Elevator
 		public static void Main(string[] args)
 		{
 			OptionSet.WriteOptionDescriptions(Out);
-			OptionSet.Parse(args);
+			var arguments = OptionSet.Parse(args);
 
-			Start(Executable);
+			Start(new ProcessStartInfo
+			{
+				FileName  = Executable,
+				Arguments = string.Join(" ", arguments.ToArray())
+			});
 		}
 	}
 }
