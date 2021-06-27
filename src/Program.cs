@@ -25,6 +25,9 @@ using static System.Environment;
 
 namespace Elevator
 {
+	/**
+	 * Elevator Program.
+	 */
 	public static class Program
 	{
 		public static readonly OptionSet OptionSet = new OptionSet
@@ -35,8 +38,14 @@ namespace Elevator
 			}
 		};
 
+		/**
+		 * Executable to invoke with elevated privileges.
+		 */
 		private static string Executable { get; set; } = string.Empty;
 
+		/**
+		 * Elevator Main entry.
+		 */
 		public static void Main(string[] args)
 		{
 			OptionSet.WriteOptionDescriptions(Out);
