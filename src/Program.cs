@@ -44,9 +44,14 @@ namespace Elevator
 			var arguments = OptionSet.Parse(args);
 			var invokable = Start(new ProcessStartInfo
 			{
-				FileName  = Executable,
-				Arguments = string.Join(" ", arguments.ToArray())
+				FileName               = Executable,
+				Arguments              = string.Join(" ", arguments.ToArray()),
+				RedirectStandardOutput = true,
+				RedirectStandardError  = true
 			});
+
+			WriteLine(invokable?.StandardOutput.ReadToEnd());
+			Error.WriteLine(invokable?.StandardError.ReadToEnd());
 
 			invokable?.WaitForExit();
 
