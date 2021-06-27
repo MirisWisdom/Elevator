@@ -21,6 +21,7 @@ using System.Diagnostics;
 using Mono.Options;
 using static System.Console;
 using static System.Diagnostics.Process;
+using static System.Environment;
 
 namespace Elevator
 {
@@ -39,13 +40,18 @@ namespace Elevator
 		public static void Main(string[] args)
 		{
 			OptionSet.WriteOptionDescriptions(Out);
-			var arguments = OptionSet.Parse(args);
 
-			Start(new ProcessStartInfo
+			var arguments = OptionSet.Parse(args);
+			var invokable = Start(new ProcessStartInfo
 			{
 				FileName  = Executable,
 				Arguments = string.Join(" ", arguments.ToArray())
 			});
+
+			invokable?.WaitForExit();
+
+			if (invokable != null)
+				Exit(invokable.ExitCode);
 		}
 	}
 }
