@@ -50,11 +50,15 @@ namespace Elevator
 		{
 			OptionSet.WriteOptionDescriptions(Out);
 
-			var arguments = OptionSet.Parse(args);
+			var remaining = OptionSet.Parse(args);
+			var arguments  = string.Join(" ", remaining.ToArray());
+
+			WriteLine($"Invoking '{Executable}' with arguments:\n{arguments}");
+
 			var invokable = Start(new ProcessStartInfo
 			{
 				FileName               = Executable,
-				Arguments              = string.Join(" ", arguments.ToArray()),
+				Arguments              = arguments,
 				RedirectStandardOutput = true,
 				RedirectStandardError  = true
 			});
